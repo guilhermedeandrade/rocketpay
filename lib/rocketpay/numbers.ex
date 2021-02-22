@@ -8,7 +8,7 @@ defmodule Rocketpay.Numbers do
   defp handle_file({:ok, file}) do
     result =
       file
-      |> String.replace("\n", "")
+      |> String.trim()
       |> String.split(",")
       |> Stream.map(&String.to_integer/1)
       |> Enum.sum()
